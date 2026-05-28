@@ -42,7 +42,7 @@ if model is not None:
         with col1:
             st.subheader("Uploaded Scan")
             image = Image.open(uploaded_file).convert('RGB')
-            st.image(image, caption="Patient CT Slice", use_container_width=True)
+            st.image(image, caption="Patient CT Slice", use_container_width=350)
 
         with col2:
             st.subheader("AI Triage Results")
