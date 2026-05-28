@@ -17,7 +17,7 @@ st.markdown("---")
 
 
 # Load the proposed model 
-@st.cache_resource(show_spinner="Loading AI weights into memory...")
+@st.cache_resource(show_spinner="Loading weights into memory")
 def load_stroke_model():
     model_path = 'best_stroke_model.keras'
     if not os.path.exists(model_path):
@@ -32,7 +32,7 @@ def load_stroke_model():
 
 model = load_stroke_model()
 
-# Main Application GUI
+# Main application GUI for uploading and predicting on Brain CT scans
 if model is not None:
     uploaded_file = st.file_uploader("Upload a Brain CT Scan (JPG, PNG, JPEG)", type=["jpg", "png", "jpeg"])
 
@@ -45,8 +45,8 @@ if model is not None:
             st.image(image, caption="Patient CT Slice", width=350)
 
         with col2:
-            st.subheader("AI Triage Results")
-            with st.spinner("Analyzing scan parameters..."):
+            st.subheader("Prediction Triage Results")
+            with st.spinner("Analyzing scan parameters"):
                 # Preprocessing
                 img_resized = image.resize((224, 224))
                 img_array = tf.keras.preprocessing.image.img_to_array(img_resized)
