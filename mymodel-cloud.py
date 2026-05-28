@@ -10,7 +10,7 @@ import os
 st.set_page_config(page_title="Stroke CT Triage System", layout="centered")
 
 # header
-st.title("🧠 Automated Real-Time Stroke Triage System")
+st.title("Automated Real-Time Stroke Triage System")
 st.markdown("Please upload Brain CT slice to run the **EfficientNet-B0 + SE** model in real-time.")
 st.markdown("This system is for Education Purpose Only. This is not real medical software on real world diagnosis.")
 st.markdown("---")
